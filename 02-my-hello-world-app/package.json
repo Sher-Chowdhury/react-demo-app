@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Sher-Chowdhury/react-demo-app/issues"
   },
-  "homepage": "https://github.com/Sher-Chowdhury/react-demo-app#readme"
+  "homepage": "https://github.com/Sher-Chowdhury/react-demo-app#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
