@@ -1,0 +1,22 @@
+{
+  "name": "02-my-hello-world-app",
+  "version": "1.0.0",
+  "description": "hello world app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sher-Chowdhury/react-demo-app.git"
+  },
+  "keywords": [
+    "hello-world"
+  ],
+  "author": "Sher Chowdhury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sher-Chowdhury/react-demo-app/issues"
+  },
+  "homepage": "https://github.com/Sher-Chowdhury/react-demo-app#readme"
+}
