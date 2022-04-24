@@ -508,3 +508,38 @@ npm install express
 This downloads the `express` into the node_modules folder, and also adds express to the packages.json dependencies section. 
 
 ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/1702ec1d5bc8b8e3c406e070f2759fab70b30075
+
+now run
+
+```
+npm install react react-dom
+npm install webpack webpack-cli
+npm install npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
+```
+
+- react - https://www.npmjs.com/package/react
+- react-dom - https://www.npmjs.com/package/react-dom - This takes all the jsx code, and renders it to standard html+javascript code that web browsers understands (actually I think it's react api calls). 
+
+- webpack - https://www.npmjs.com/package/webpack - this bundles all the js code into a single file. 
+- webpack-cli - https://www.npmjs.com/package/webpack-cli - This provides the webpack binary. 
+
+- babel - converts react's jsx code into react-api calls. 
+
+E.g. go to https://babeljs.io/ , then click "try it out", then enter `<h1>hello</h1>`. 
+
+
+Optionally install this Dev dependency:
+
+```
+npm install -D nodemon
+```
+
+nodemon - - autoruns `npm stop ; npm start` app when any code changes are made.
+
+
+I dont think this is needed when using the webstorm IDE. 
+
+
+```
+npm install -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
+```
