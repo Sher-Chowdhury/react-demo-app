@@ -595,5 +595,5 @@ touch webpack.config.js
 
 That's why we have created the above folder structure, so that we can stick with these defaults, rather than overriding them with custom configs. 
 
-
+ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/ad04cd45af86f4bf0c7085343dfaac797de2524e
 
