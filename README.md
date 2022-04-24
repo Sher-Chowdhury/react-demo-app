@@ -440,7 +440,7 @@ A project setup like this is pretty much overkill, and you're unlikely to need a
 
 It's recommended to follow this guide - https://jscomplete.com/learn/1rd-reactful
 
-
+also see - https://blog.logrocket.com/commonjs-vs-es-modules-node-js/
 
 ```
 $ mkdir 02-my-hello-world-app
@@ -514,7 +514,7 @@ now run
 ```
 npm install react react-dom
 npm install webpack webpack-cli
-npm install npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
+npm install npm install babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
 ```
 
 - react - https://www.npmjs.com/package/react
@@ -546,6 +546,9 @@ next install eslint - https://www.npmjs.com/package/eslint
 npm install -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
 ```
 
+Note: `babel-eslint` is deprecated. I'll cover that later. 
+
+
 now create the `.eslintrc.js` file - https://github.com/Sher-Chowdhury/react-demo-app/commit/370e65a63542dfe9ae226e37fcc562ffe4daf522
 
 then install a testing library. Mocha is very popular, but for react based apps, it's Jest that is normally used  
@@ -566,22 +569,22 @@ touch reactful/dist/main.js
 mkdir reactful/src
 touch reactful/src/index.js
 
-mkdir reactful/components
-touch reactful/components/app.js
+mkdir reactful/src/components
+touch reactful/src/components/app.js
 
-mkdir reactful/server
-touch reactful/server/server.js
+mkdir reactful/src/server
+touch reactful/src/server/server.js
 
-tree reactful
+tree reactful                              
 reactful
-├── components
-│   └── app.js
 ├── dist
 │   └── main.js
-├── server
-│   └── server.js     # write backend code here. E.g. express related code
 └── src
-    └── index.js
+    ├── components
+    │   └── app.js
+    ├── index.js
+    └── server
+        └── server.js
 ```
 
 Now create this 2 top level files:
@@ -598,6 +601,27 @@ That's why we have created the above folder structure, so that we can stick with
 ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/ad04cd45af86f4bf0c7085343dfaac797de2524e
 
 now we configure package.json to use jest, nodemon, babel, and webpack - https://github.com/Sher-Chowdhury/react-demo-app/commit/f9a96934d96d24c53e92b2c84e12e9e3469d0341
+
+
+Next create a dummy app. 
+
+Note I was getting red squiggly error lines here, saying,
+
+```
+Parsing error: require() of ES Module /Users/sherchowdhury/github/react-demo-app/02-my-hello-world-app/node_modules/eslint-scope/lib/definition.js from /Users/sherchowdhury/github/react-demo-app/02-my-hello-world-app/node_modules/babel-eslint/lib/require-from-eslint.js not supported.
+Instead change the require of definition.js in /Users/sherchowdhury/github/react-demo-app/02-my-hello-world-app/node_modules/babel-eslint/lib/require-from-eslint.js to a dynamic import() which is available in all CommonJS modules.
+```
+
+I found the fix here - https://stackoverflow.com/a/69557309
+
+
+```
+npm uninstall -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
+npm install -D eslint @babel/eslint-parser eslint-plugin-react eslint-plugin-react-hooks
+
+```
+
+
 
 
 
