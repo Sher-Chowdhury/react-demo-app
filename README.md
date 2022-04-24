@@ -597,3 +597,5 @@ That's why we have created the above folder structure, so that we can stick with
 
 ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/ad04cd45af86f4bf0c7085343dfaac797de2524e
 
+now we configure package.json to use jest, nodemon, babel, and webpack
+
