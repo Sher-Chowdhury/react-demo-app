@@ -1,4 +1,5 @@
 module.exports = {
+  entry: "./reactful/src",
   module: {
     rules: [
       {
