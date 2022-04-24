@@ -21,5 +21,8 @@
   "homepage": "https://github.com/Sher-Chowdhury/react-demo-app#readme",
   "dependencies": {
     "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
