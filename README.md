@@ -207,4 +207,304 @@ tree -I node_modules
 2 directories, 17 files
 ```
 
+Ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/f64a5a3ae7777bd37479c4fca6b245f0b2fa04a5
+
+
 `-I` is to ignore the node_module's folder. 
+
+The package.json shows the make up of this project:
+
+```
+cat package.json 
+{
+  "name": "01-my-hello-world-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+```
+
+
+You can now start it up
+
+```
+npm start
+```
+
+
+Here's what the `src/App.js` looks like:
+
+```js
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Notice the `import` statements pulls in non-node-packages, e.g. css. That's possible because this app comes with a lot of built in configurations to make that possible. To see all these hidden configurations, run the exect command:
+
+```
+npm run eject
+
+> 01-my-hello-world-app@0.1.0 eject /Users/sherchowdhury/github/react-demo-app/01-my-hello-world-app
+> react-scripts eject
+
+NOTE: Create React App 2+ supports TypeScript, Sass, CSS Modules and more without ejecting: https://reactjs.org/blog/2018/10/01/create-react-app-v2.html
+
+✔ Are you sure you want to eject? This action is permanent. … yes
+Ejecting...
+
+Copying files into /Users/sherchowdhury/github/react-demo-app/01-my-hello-world-app
+  Adding /config/env.js to the project
+  Adding /config/getHttpsConfig.js to the project
+  Adding /config/modules.js to the project
+  Adding /config/paths.js to the project
+  Adding /config/webpack.config.js to the project
+  Adding /config/webpackDevServer.config.js to the project
+  Adding /config/jest/babelTransform.js to the project
+  Adding /config/jest/cssTransform.js to the project
+  Adding /config/jest/fileTransform.js to the project
+  Adding /scripts/build.js to the project
+  Adding /scripts/start.js to the project
+  Adding /scripts/test.js to the project
+  Adding /config/webpack/persistentCache/createEnvironmentHash.js to the project
+
+Updating the dependencies
+  Removing react-scripts from dependencies
+  Adding @babel/core to dependencies
+  Adding @pmmmwh/react-refresh-webpack-plugin to dependencies
+  Adding @svgr/webpack to dependencies
+  Adding babel-jest to dependencies
+  Adding babel-loader to dependencies
+  Adding babel-plugin-named-asset-import to dependencies
+  Adding babel-preset-react-app to dependencies
+  Adding bfj to dependencies
+  Adding browserslist to dependencies
+  Adding camelcase to dependencies
+  Adding case-sensitive-paths-webpack-plugin to dependencies
+  Adding css-loader to dependencies
+  Adding css-minimizer-webpack-plugin to dependencies
+  Adding dotenv to dependencies
+  Adding dotenv-expand to dependencies
+  Adding eslint to dependencies
+  Adding eslint-config-react-app to dependencies
+  Adding eslint-webpack-plugin to dependencies
+  Adding file-loader to dependencies
+  Adding fs-extra to dependencies
+  Adding html-webpack-plugin to dependencies
+  Adding identity-obj-proxy to dependencies
+  Adding jest to dependencies
+  Adding jest-resolve to dependencies
+  Adding jest-watch-typeahead to dependencies
+  Adding mini-css-extract-plugin to dependencies
+  Adding postcss to dependencies
+  Adding postcss-flexbugs-fixes to dependencies
+  Adding postcss-loader to dependencies
+  Adding postcss-normalize to dependencies
+  Adding postcss-preset-env to dependencies
+  Adding prompts to dependencies
+  Adding react-app-polyfill to dependencies
+  Adding react-dev-utils to dependencies
+  Adding react-refresh to dependencies
+  Adding resolve to dependencies
+  Adding resolve-url-loader to dependencies
+  Adding sass-loader to dependencies
+  Adding semver to dependencies
+  Adding source-map-loader to dependencies
+  Adding style-loader to dependencies
+  Adding tailwindcss to dependencies
+  Adding terser-webpack-plugin to dependencies
+  Adding webpack to dependencies
+  Adding webpack-dev-server to dependencies
+  Adding webpack-manifest-plugin to dependencies
+  Adding workbox-webpack-plugin to dependencies
+
+Updating the scripts
+  Replacing "react-scripts start" with "node scripts/start.js"
+  Replacing "react-scripts build" with "node scripts/build.js"
+  Replacing "react-scripts test" with "node scripts/test.js"
+
+Configuring package.json
+  Adding Jest configuration
+  Adding Babel preset
+
+Running npm install...
+audited 1410 packages in 6.043s
+
+174 packages are looking for funding
+  run `npm fund` for details
+
+found 1 moderate severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details
+Ejected successfully!
+
+Staged ejected files for commit.
+
+Please consider sharing why you ejected in this survey:
+  http://goo.gl/forms/Bi6CZjk1EqsdelXk1
+  ```
+
+Here's what's changed:
+
+```
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   config/env.js
+        new file:   config/getHttpsConfig.js
+        new file:   config/jest/babelTransform.js
+        new file:   config/jest/cssTransform.js
+        new file:   config/jest/fileTransform.js
+        new file:   config/modules.js
+        new file:   config/paths.js
+        new file:   config/webpack.config.js
+        new file:   config/webpack/persistentCache/createEnvironmentHash.js
+        new file:   config/webpackDevServer.config.js
+        new file:   scripts/build.js
+        new file:   scripts/start.js
+        new file:   scripts/test.js
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   package-lock.json
+        modified:   package.json
+```
+
+ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/fcbba5d740b07c7b156253c3ce9487181030fbbd
+
+In particular see how the package.json has changed - https://github.com/Sher-Chowdhury/react-demo-app/commit/fcbba5d740b07c7b156253c3ce9487181030fbbd#diff-e0e8246784d4f8be8414321166cbbc3aa4398a20b43a57d1d5bcc197d074e7f7
+
+It essentially removed the wrapper tool and replaced it with the core underlying code. 
+
+A project setup like this is pretty much overkill, and you're unlikely to need all these features. 
+
+
+## Manually create a project
+
+It's recommended to follow this guide - https://jscomplete.com/learn/1rd-reactful
+
+
+
+```
+$ mkdir 02-my-hello-world-app
+
+$ cd 02-my-hello-world-app
+
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (02-my-hello-world-app) 
+version: (1.0.0) 
+description: hello world app
+entry point: (index.js) 
+test command: 
+git repository: https://github.com/Sher-Chowdhury/react-demo-app
+keywords: hello-world
+author: Sher Chowdhury
+license: (ISC) MIT
+About to write to /Users/sherchowdhury/github/react-demo-app/02-my-hello-world-app/package.json:
+
+{
+  "name": "02-my-hello-world-app",
+  "version": "1.0.0",
+  "description": "hello world app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sher-Chowdhury/react-demo-app.git"
+  },
+  "keywords": [
+    "hello-world"
+  ],
+  "author": "Sher Chowdhury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sher-Chowdhury/react-demo-app/issues"
+  },
+  "homepage": "https://github.com/Sher-Chowdhury/react-demo-app#readme"
+}
+
+
+Is this OK? (yes) yes
+```
+
+This creates the `package.json` file, ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/9e5a12bc97ca50e39146a209c67c73008c74ec66
+
+
+Now run:
+
+```
+npm install express
+```
+
+This downloads the `express` into the node_modules folder, and also adds express to the packages.json dependencies section. 
+
+ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/1702ec1d5bc8b8e3c406e070f2759fab70b30075
