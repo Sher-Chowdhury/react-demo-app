@@ -540,6 +540,20 @@ nodemon - - autoruns `npm stop ; npm start` app when any code changes are made.
 I dont think this is needed when using the webstorm IDE. 
 
 
+next install eslint - https://www.npmjs.com/package/eslint
+
 ```
 npm install -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
 ```
+
+now create the `.eslintrc.js` file - https://github.com/Sher-Chowdhury/react-demo-app/commit/370e65a63542dfe9ae226e37fcc562ffe4daf522
+
+then install a testing library. Mocha is very popular, but for react based apps, it's Jest that is normally used  
+
+```
+npm install -D jest babel-jest react-test-renderer
+```
+
+Ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/bff2545c48aace013800f5fecd5b0d180e70e8c8
+
+
