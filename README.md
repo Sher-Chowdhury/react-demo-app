@@ -557,3 +557,43 @@ npm install -D jest babel-jest react-test-renderer
 Ref - https://github.com/Sher-Chowdhury/react-demo-app/commit/bff2545c48aace013800f5fecd5b0d180e70e8c8
 
 
+Now, need to create a folder structure to put all the code, this is up to you, but here's one approach:
+
+```
+mkdir -p reactful/dist
+touch reactful/dist/main.js
+
+mkdir reactful/src
+touch reactful/src/index.js
+
+mkdir reactful/components
+touch reactful/components/app.js
+
+mkdir reactful/server
+touch reactful/server/server.js
+
+tree reactful
+reactful
+├── components
+│   └── app.js
+├── dist
+│   └── main.js
+├── server
+│   └── server.js     # write backend code here. E.g. express related code
+└── src
+    └── index.js
+```
+
+Now create this 2 top level files:
+
+```
+touch babel.config.js
+touch webpack.config.js
+```
+
+`webpack` by default looks for a `src/index.js` and bundles the code. By default it will output this bundle to `dist/main.js`.
+
+That's why we have created the above folder structure, so that we can stick with these defaults, rather than overriding them with custom configs. 
+
+
+
